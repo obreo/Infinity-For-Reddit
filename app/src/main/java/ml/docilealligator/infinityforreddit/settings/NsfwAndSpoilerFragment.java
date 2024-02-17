@@ -76,8 +76,8 @@ public class NsfwAndSpoilerFragment extends Fragment {
     private SettingsActivity activity;
     private boolean blurNsfw;
     private boolean doNotBlurNsfwInNsfwSubreddits;
-    private boolean disableNsfwForever;
-    private boolean manuallyCheckDisableNsfwForever = true;
+    private boolean disableNsfwForever = true;
+    private boolean manuallyCheckDisableNsfwForever;
 
     public NsfwAndSpoilerFragment() {
         // Required empty public constructor
@@ -169,7 +169,7 @@ public class NsfwAndSpoilerFragment extends Fragment {
                                 -> {
                             sharedPreferences.edit().putBoolean(SharedPreferencesUtils.DISABLE_NSFW_FOREVER, true).apply();
                             disableNsfwForever = true;
-                            disableNsfwForeverSwitchMaterial.setEnabled(false);
+                            disableNsfwForeverSwitchMaterial.setEnabled(true);
                             disableNsfwForeverLinearLayout.setEnabled(false);
                             disableNsfwForeverSwitchMaterial.setChecked(true);
                             disableNsfwForeverTextView.setTextColor(activity.customThemeWrapper.getSecondaryTextColor());
